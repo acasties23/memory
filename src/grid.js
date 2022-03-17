@@ -11,15 +11,19 @@ function createGrid() {
         const row = []
         for (let j = 0; j < 4; j++) {
             row.push(
-                {visible:false,
-                card:cardArray[index],
-                getSrc:function(){ 
-                    if(this.visible){
-                        return 'images/'+ this.card+'.jpeg'
+                {
+                    isVisible:false,
+                    src: cardArray[index],
+                    setVisible: function(isVisible){
+                        this.isVisible = isVisible
+                    },
+                    getSrc:function(){ 
+                        if(this.isVisible){
+                            return 'images/'+ this.src +'.jpeg'
+                        }
+                        return 'images/dos.jpeg'
                     }
-                    return 'images/dos.jpeg'
-                    }
-                }
+                },
             )
             index += 1
         }

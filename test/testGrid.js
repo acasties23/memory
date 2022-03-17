@@ -15,12 +15,12 @@ describe("a memory grid",()=>{
 
         const grid = createGrid()
         const topLeft = grid[0][0]
-        expect(topLeft).to.have.property('visible')
-        expect(topLeft.visible).to.equal(false)
-        expect(topLeft).to.have.property('card')
-        expect(topLeft.card).to.be.oneOf(['image1','image2','image3','image4','image5','image6','image7','image8','image9','image0'])
-        expect(topLeft).to.have.property('card')
-        topLeft.visible = true;
-        expect(topLeft.visible).to.equal(true)
+        expect(topLeft).to.have.property('isVisible')
+        expect(topLeft.isVisible).to.equal(false)
+        expect(topLeft).to.have.property('src')
+        expect(topLeft.src).to.be.oneOf(['image1','image2','image3','image4','image5','image6','image7','image8','image9','image0'])
+        expect(topLeft).to.have.property('src')
+        topLeft.setVisible(true);
+        expect(topLeft.isVisible).to.equal(true)
     })
 })
